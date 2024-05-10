@@ -47,8 +47,8 @@ def format_y_ticks(value, pos):
 ax.yaxis.set_major_formatter(ticker.FuncFormatter(format_y_ticks))
 # ax.text(-0.5, 850000, '×$10^5$', ha='center', va='bottom', fontsize=15)
 
-ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
-ax.set_ylabel('合约执行时间消耗（ms）', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
+ax.set_xlabel('', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
+ax.set_ylabel('Time Consumption', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
 ax.set_xticks(x  +  (len(evm_exec_time) - 1) * width / 2)
 ax.set_xticklabels(contracts[:-1], rotation=45, fontsize=20)
 ax.legend()
