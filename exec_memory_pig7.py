@@ -36,12 +36,18 @@ for i, (client_code, client_name) in enumerate(clients.items()):
         ax.text(bar.get_x() + bar.get_width() / 2., height,
                 '%0.2f' % height, ha='center', va='bottom', fontsize=7)
 
-ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
-ax.set_ylabel('合约执行消耗内存比例', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
+# ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
+ax.set_ylabel('Mem(Wasm)/Mem(EVM)', {'family': 'consolas', 'weight': 'normal', 'size': 25})
 ax.set_xticks(x + width)
 ax.set_xticklabels(contracts[:-2], rotation=45, fontsize=20)
 ax.legend()
 
+ax.set_yscale('log') # Y轴，10为底，科学计数
+# ax.set_ylim(1,10**3)
+plt.yticks([1, 10, 100, 1000], ['$10^0$', '$10^1$', '$10^2$',  '$10^3$'])
+
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
 legend = ax.legend(fontsize=16)
 
 # plt.title('合约字节码长度比例')

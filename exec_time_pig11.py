@@ -38,11 +38,15 @@ for i, (client_code, client_name) in enumerate(clients.items()):
         ax.text(bar.get_x() + bar.get_width() / 2., height,
                 '%0.2f' % height, ha='center', va='bottom', fontsize=7)
 
-ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
-ax.set_ylabel('合约执行消耗时间比例', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
+# ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
+ax.set_ylabel('Time(Wasm)/Time(EVM)', {'family': 'consolas', 'weight': 'normal', 'size': 25})
 ax.set_xticks(x + width)
 ax.set_xticklabels(contracts[:-2], rotation=45, fontsize=20)
 ax.legend()
+
+
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
 
 legend = ax.legend(fontsize=16)
 
