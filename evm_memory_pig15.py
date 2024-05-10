@@ -48,8 +48,8 @@ def format_y_ticks(value, pos):
 ax.yaxis.set_major_formatter(ticker.FuncFormatter(format_y_ticks))
 ax.text(-0.5, 60000, '×$10^4$', ha='center', va='bottom', fontsize=15)
 
-ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
-ax.set_ylabel('执行时内存消耗（字节）', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
+# ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
+ax.set_ylabel('Memory Occupancy (byte)', {'family': 'consolas', 'weight': 'normal', 'size': 25})
 ax.set_xticks(x  +  (len(evm_memory) - 1) * width / 2.)
 ax.set_xticklabels(contracts[:-1], rotation=45, fontsize=20)
 ax.legend()
