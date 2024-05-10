@@ -43,8 +43,12 @@ for i, (client_code, client_name) in enumerate(clients.items()):
 ax.spines['bottom'].set_position('zero')
 
 # plt.xlabel('合约名',labelpad=-12,fontsize = 25)
-ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
-ax.set_ylabel('合约执行消耗Gas比例($log_{2}$)', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
+# ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 20})
+ax.set_ylabel('Gas(Wasm)/Gas(EVM)', {'family': 'consolas', 'weight': 'normal', 'size': 20})
+# ax.set_yscale('log') # Y轴，10为底，科学计数
+ax.text(-0.5, 6.25, '$log_{2}$', ha='center', va='bottom', fontsize=15,fontstyle='normal')
+ax.spines['right'].set_visible(False)
+ax.spines['top'].set_visible(False)
 # ax.set_xticks(x + width)
 # ax.set_xticklabels(contracts[:-2], rotation=45, fontsize=20, verticalalignment='top')
 # ax.xticks(contracts[:-2], rotation=45, fontsize=20, ha='right',position = (0,-1))

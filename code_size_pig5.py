@@ -37,8 +37,8 @@ for i, (client_code, client_name) in enumerate(clients.items()):
         ax.text(bar.get_x() + bar.get_width() / 2., height,
                 '%0.2f' % height, ha='center', va='bottom', fontsize=7)
 
-# ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 25})
-ax.set_ylabel('Len(Wasm)/Len(EVM)', {'family': 'consolas', 'weight': 'normal', 'size': 25})
+# ax.set_xlabel('合约名', {'family': 'SimSun', 'weight': 'normal', 'size': 20})
+ax.set_ylabel('Len(Wasm)/Len(EVM)', {'family': 'consolas', 'weight': 'normal', 'size': 20})
 ax.set_xticks(x + width)
 ax.set_xticklabels(contracts[:-2], rotation=45, fontsize=20)
 ax.legend()
@@ -50,5 +50,5 @@ legend = ax.legend(fontsize=16)
 
 # plt.title('合约字节码长度比例')
 plt.tight_layout()
-plt.savefig('codesize_tot.pdf', dpi=600, bbox_inches='tight')
+plt.savefig('codesize_pig5.pdf', dpi=600, bbox_inches='tight')
 plt.show()
